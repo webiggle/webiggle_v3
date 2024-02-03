@@ -2,12 +2,24 @@
 export interface Props{
     href:string,
     text:string,
-    icon?: string
+    icon?: string,
+    isExternalLink?: boolean
 }
-const {href, text, icon} = Astro.props
+const {href, text, icon, isExternalLink} = Astro.props
+
+const targetLink = (isExternalLink?: boolean) => {
+    return isExternalLink
+        ? '_blank'
+        : '_self';
+}
+
 ---
 <li>
-    <a href={href} class="duration-300 font-medium ease-linear hover:text-primary py-3 inline-flex items-center">
+    <a
+        href={href}
+        class="duration-300 font-medium ease-linear hover:text-primary py-3 inline-flex items-center"
+        target={targetLink(isExternalLink)}
+        >
     {text}
     <slot set:html={icon} />
     </a>

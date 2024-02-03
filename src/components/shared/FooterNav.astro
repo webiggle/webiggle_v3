@@ -5,11 +5,18 @@ export interface Props{
         itemText:string,
         itemLink:string,
         itemIcon?: string,
+        isExternalLink?: boolean
     }[],
     className?:string,
 }
 
 const {title, navItems, className} = Astro.props
+
+const targetLink = (isExternalLink?: boolean) => {
+    return isExternalLink
+        ? '_blank'
+        : '_self';
+}
 ---
 
 <nav class=`space-y-6 ${className}`>
@@ -19,7 +26,7 @@ const {title, navItems, className} = Astro.props
     <ul class="space-y-3 font-medium text-base md:text-lg text-heading-3">
         {navItems.map((navItem)=>(
             <li>
-                <a href={navItem.itemLink} class="transition hover:text-primary inline-flex items-center">
+                <a href={navItem.itemLink} class="transition hover:text-primary inline-flex items-center" target={targetLink(navItem.isExternalLink)}>
                     {navItem.itemText}
                     <slot set:html={navItem.itemIcon} />
                 </a>
