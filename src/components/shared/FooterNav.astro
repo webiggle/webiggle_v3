@@ -3,26 +3,28 @@ export interface Props{
     title:string,
     navItems:{
         itemText:string,
-        itemLink:string
-    }[]
+        itemLink:string,
+        itemIcon?: string,
+    }[],
+    className?:string,
 }
 
-const {title, navItems} = Astro.props
+const {title, navItems, className} = Astro.props
 ---
 
-<nav class="space-y-6">
-    <h2 class="capitalze font-semibold text-heading-1 text-xl">
+<nav class=`space-y-6 ${className}`>
+    <h2 class="capitalze font-semibold text-heading-1 text-lg">
         {title}
     </h2>
-    <ul class="space-y-3 font-medium md:text-lg text-heading-3">
+    <ul class="space-y-3 font-medium text-base md:text-lg text-heading-3">
         {navItems.map((navItem)=>(
             <li>
-                <a href={navItem.itemLink} class="transition hover:text-primary">
+                <a href={navItem.itemLink} class="transition hover:text-primary inline-flex items-center">
                     {navItem.itemText}
+                    <slot set:html={navItem.itemIcon} />
                 </a>
             </li>
         ))
-
         }
     </ul>
 </nav>

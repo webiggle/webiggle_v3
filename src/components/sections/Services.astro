@@ -12,7 +12,6 @@ type ServicesProps = {
     icon: string
 };
 
-
 ---
 
 <section id="services">
@@ -22,17 +21,17 @@ type ServicesProps = {
                 What we offer
             </Title>
             <Paragraph>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                One-Stop shop for your digital journey!
             </Paragraph>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {
-                    services.map((service: ServicesProps) => {
+                services.map((service: ServicesProps) => {
                     return (
-                            <Service title={service.title} description={service.description} icon={service.icon}>
-                            </Service>
-                            );
-                    })
+                        <Service title={service.title} description={service.description} icon={service.icon}>
+                        </Service>
+                    );
+                })
             }
         </div>
     </Container>
