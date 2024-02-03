@@ -1,7 +1,6 @@
 ---
 import Button from "../shared/Button.astro";
 import Container from "../shared/Container.astro";
-import Paragraph from "../shared/Paragraph.astro";
 ---
 
 <section  id="contact-us" class="pb-12 lg:pb-20">
@@ -43,15 +42,108 @@ import Paragraph from "../shared/Paragraph.astro";
         >
           Want to <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600">Kick Start</span> Your Digital Journey?
         </h1>
-        <Paragraph className={"pt-10"}>
-          We are here to help you.
-        </Paragraph>
-        <div class="mx-auto max-w-md sm:max-w-xl pt-10">
-          <Button variant={"primary"}>
-            <span class="text-white relative z-[5]">Get In Touch</span>
-          </Button>
-        </div>
+        <!-- <form id="contact-form" class="pt-10 space-y-3">
+    
+          <div class="form-group py-1 pl-6 w-full pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
+          border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body  focus-within:border-primary">
+            <span class="min-w-max pr-2 border-r border-box-border">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>                                                                                
+            </span>
+            <input type="text" name="name" placeholder="Name" class="w-full py-3 outline-none bg-transparent">
+          </div>
+
+          <div class="form-group py-1 pl-6 w-full pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
+          border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body  focus-within:border-primary">
+            <span class="min-w-max pr-2 border-r border-box-border">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
+                </svg>                                                          
+            </span>
+            <input type="email" name="email" id="" placeholder="Email" class="w-full py-3 outline-none bg-transparent">
+          </div>
+
+          <div class="form-group py-1 pl-6 w-full pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
+          border border-box-border bg-box-bg rounded-2xl ease-linear focus-within:bg-body  focus-within:border-primary">
+            <span class="min-w-max pr-2 border-r border-box-border">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+              </svg>                                               
+            </span>
+            <textarea name="message" id="" placeholder="Message" class="w-full py-3 outline-none bg-transparent h-24"></textarea>
+          </div>
+          <Button type="submit" variant={"primary"} className={"min-w-max text-white"}>
+            <span class="hidden sm:flex relative z-[5]">
+                Get Started
+            </span>
+            <span class="flex sm:hidden relative z-[5]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                </svg>                                      
+            </span>
+        </Button>
+        </form> -->
+        <Button type="submit" variant={"primary"} className={"min-w-max text-white mt-10"}>
+          <span class="relative z-[5]">
+              Email us
+              <span class="min-w-max mx-2 border-r border-box-border"></span>
+              info@webiggle.com
+          </span>
+      </Button>
       </div>
     </div>
   </Container>
 </section>
+
+<!-- <script>
+  const form = document.getElementById("contact-form");
+  var xhr = new XMLHttpRequest();
+
+  const handleFormSubmission = (event) => {
+    // prevent page from reloading
+    event.preventDefault();
+
+    const data = event.target.elements;
+
+    // put into JSON object
+    const formData = {
+      name: data.name.value,
+      email: data.email.value,
+      message: data.message.value,
+    };
+
+    console.log(formData);
+
+      // Set POST request method to our netlify function
+      xhr.open("GET", "http://localhost:8000/index.php?route=information/contact");
+
+      // Set the request headers
+      xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:4321/');
+      xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+      // xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+      xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+      xhr.setRequestHeader("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+
+      xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
+
+      // Send the data as JSON to our netlify function
+      xhr.send(JSON.stringify(formData));
+
+      // Handle the response
+      xhr.onload = function () {
+        const response = JSON.parse(xhr.responseText);
+
+        if (xhr.status === 200) {
+          // The request was successful
+          console.log("success");
+        } else {
+          // The request failed
+          console.log("fail");
+        }
+      };
+  }
+
+  // add the submission event listener
+  form.addEventListener("submit", handleFormSubmission, true);
+</script> -->
